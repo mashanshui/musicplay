@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:strip="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/framelayout"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    >
+    <ImageView
+        android:id="@+id/backGround"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="#adadad"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+            <ImageButton
+                android:id="@+id/menubutton"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_weight="2"
+                android:scaleType="center"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/search_button"
+                android:src="@drawable/ic_menu"/>
+
+            <com.astuetz.PagerSlidingTabStrip
+                android:id="@+id/tabStrip"
+                android:layout_weight="6"
+                android:layout_height="40dp"
+                android:layout_width="100dp"
+                strip:pstsShouldExpand="true"/>
+
+            <ImageButton
+                android:id="@+id/searchbutton"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="2"
+                android:background="@drawable/search_button"
+                android:scaleType="fitCenter"
+                android:src="@drawable/search" />
+        </LinearLayout>
+
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewPage"
+            android:layout_marginTop="45dp"
+            android:layout_marginBottom="60dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true">
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ysj" />
+
+            <SeekBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/imageView1"
+                android:layout_toRightOf="@+id/imageView1" />
+
+            <ImageButton
+                android:id="@+id/pause"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignBottom="@+id/imageView1"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/progressBar"
+                android:layout_marginRight="120dp"
+                android:background="@drawable/pause_button" />
+
+            <ImageButton
+                android:id="@+id/play"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignBottom="@+id/imageView1"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/progressBar"
+                android:layout_marginRight="70dp"
+                android:background="@drawable/play_button" />
+
+            <ImageButton
+                android:id="@+id/next"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignBottom="@+id/imageView1"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/progressBar"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/next_button" />
+
+            <TextView
+                android:id="@+id/currenttime"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="13dp"
+                android:layout_marginStart="82dp" />
+
+
+            <TextView
+                android:id="@+id/alltime"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignTop="@+id/currenttime"
+                android:layout_marginStart="144dp" />
+
+            <TextView
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/imageView1"
+                android:layout_marginStart="16dp"
+                android:lines="1"
+                android:id="@+id/playname" />
+        </RelativeLayout>
+    </RelativeLayout>
+</FrameLayout>
